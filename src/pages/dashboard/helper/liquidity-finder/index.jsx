@@ -17,6 +17,7 @@ export const LiquidityFinder = () => {
       setPoolAddress(address[0]);
     }
   };
+
   return (
     <div className="h-[calc(100vh-80px)] flex flex-col items-center">
       <div className="text-2xl m-3 z-2 border-b-2">
