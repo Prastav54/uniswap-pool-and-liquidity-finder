@@ -1,8 +1,5 @@
-import toast from "react-hot-toast";
+import { toast } from "react-toastify";
 
 export const AlertMessage = (message) => {
-  toast.error(message, {
-    duration: 4000,
-    position: "top-right",
-  });
+  return toast.error(message);
 };

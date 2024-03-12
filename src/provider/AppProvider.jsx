@@ -4,6 +4,7 @@ import React from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { antdThemeConfig } from "../config/antd";
 import { Spinner } from "../components/spinner";
+import { ToastContainer } from "react-toastify";
 
 const ErrorFallback = () => {
   return (
@@ -32,6 +33,7 @@ export const AppProvider = ({ children }) => {
   return (
     <React.Suspense fallback={<InProgressComponent />}>
       <ErrorBoundary FallbackComponent={ErrorFallback}>
+        <ToastContainer closeOnClick={false} draggable={false} />
         <ConfigProvider theme={antdThemeConfig}>
           <AntdApp>{children}</AntdApp>
         </ConfigProvider>

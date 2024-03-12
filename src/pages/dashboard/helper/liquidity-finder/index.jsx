@@ -2,7 +2,10 @@ import { Button, Form } from "antd";
 import { Input } from "../../../../components/input/input";
 import { NumberInput } from "../../../../components/number-input";
 import { SelectInput } from "../../../../components/select-input";
-import { NETWORK_DETAILS } from "../../../../constants";
+import {
+  CORRECT_ADDRESS_VALIDATION,
+  NETWORK_DETAILS,
+} from "../../../../constants";
 import { useState } from "react";
 import { getPoolAddress } from "../../../../utils/uniswap";
 
@@ -31,7 +34,7 @@ export const LiquidityFinder = () => {
           rules={[
             {
               pattern: new RegExp(/^(0x)?[0-9a-fA-F]{40}$/),
-              message: "Please provide correct address",
+              message: CORRECT_ADDRESS_VALIDATION,
             },
           ]}
           required
@@ -43,7 +46,7 @@ export const LiquidityFinder = () => {
           rules={[
             {
               pattern: new RegExp(/^(0x)?[0-9a-fA-F]{40}$/),
-              message: "Please provide correct address",
+              message: CORRECT_ADDRESS_VALIDATION,
             },
           ]}
           required

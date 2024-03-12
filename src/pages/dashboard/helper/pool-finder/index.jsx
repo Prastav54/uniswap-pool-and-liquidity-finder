@@ -2,7 +2,10 @@ import { Button, Form } from "antd";
 import { useState } from "react";
 import { Input } from "../../../../components/input/input";
 import { SelectInput } from "../../../../components/select-input";
-import { NETWORK_DETAILS } from "../../../../constants";
+import {
+  CORRECT_ADDRESS_VALIDATION,
+  NETWORK_DETAILS,
+} from "../../../../constants";
 import { getPoolDetails } from "../../../../utils/uniswap";
 
 export const PoolFinder = () => {
@@ -30,7 +33,7 @@ export const PoolFinder = () => {
           rules={[
             {
               pattern: new RegExp(/^(0x)?[0-9a-fA-F]{40}$/),
-              message: "Please provide correct address",
+              message: CORRECT_ADDRESS_VALIDATION,
             },
           ]}
           required
